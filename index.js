@@ -17,7 +17,7 @@ bot.on("ready", async () => {
 bot.on("message", async message => {
     if(message.author.bot) return;
     if(message.channel.type === "dm") {
-        return message.channel.send(`This is a DM, I am dumb and only work in servers. bing bong :)`)
+    return message.channel.send(`This is a DM, I am dumb and only work in servers. bing bong :)`)
     }; // return if someone dms our bot
     
     let prefix = botconfig.prefix; // simplify prefix
@@ -29,7 +29,7 @@ bot.on("message", async message => {
 
     // Help
     if(cmd === `${prefix}help`) {
-        return message.channel.send(`**__Commands list__**
+    return message.channel.send(`**__Commands list__**
 **/guide** - Displays the currently recommended guide
 **/bootmii** - Installing BootMii
 **/priiloader** - Installing Priiloader
@@ -134,8 +134,8 @@ Use Bluebomb for the Wii mini and Letterbomb for the regular Wii`);
 
     // Ping
     if (cmd === `${prefix}ping`) {
-        var ping = Date.now() - message.createdTimestamp + " ms";
-        return message.channel.send("Your ping is " + `${ping}`);
+    var ping = Date.now() - message.createdTimestamp + " ms";
+    return message.channel.send("Pong! Your ping is " + `${ping}`);
     }
 
 });
