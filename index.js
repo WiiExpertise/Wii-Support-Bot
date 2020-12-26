@@ -17,7 +17,7 @@ bot.on("ready", async () => {
 bot.on("message", async message => {
     if(message.author.bot) return;
     if(message.channel.type === "dm") {
-        return message.channel.send(`Sorry ${message.author.username} This is a DM, I am dumb and only work in servers. bing bong :)`)
+        return message.channel.send(`This is a DM, I am dumb and only work in servers. bing bong :)`)
     }; // return if someone dms our bot
     
     let prefix = botconfig.prefix; // simplify prefix
@@ -43,11 +43,15 @@ bot.on("message", async message => {
 **/more** - Displays more tutorials
 **/pins** - Informs the user about the useful info contained in the pinned messages
 **/sega** - Installing Nintendont 
+**/credits** - Displays credits for the bot
+**/ping** - Displays the ping of the bot
 **/root** - Shows the user where the root of a storage device is
 **/vwii** - Displays the currently recommended vWii guide`);
-    }
+   }
 
-     // Guide
+
+
+    // Guide
     if(cmd === `${prefix}guide`) {
     return message.channel.send(`https://wii.guide/
 Use Bluebomb for the Wii mini and Letterbomb for the regular Wii`);
@@ -128,9 +132,13 @@ Use Bluebomb for the Wii mini and Letterbomb for the regular Wii`);
     return message.channel.send(`https://imgur.com/a/HDCWvt0`);
     }
 
+    // Ping
+    if (cmd === `${prefix}ping`) {
+        var ping = Date.now() - message.createdTimestamp + " ms";
+        return message.channel.send("Your ping is " + `${ping}`);
+    }
+
 });
 
 
-
 bot.login(botconfig.token);
-
