@@ -46,8 +46,14 @@ bot.on("message", async message => {
 **/credits** - Displays credits for the bot
 **/ping** - Displays the ping of the bot
 **/root** - Shows the user where the root of a storage device is
+**/ios** - Displays a link with downloads to various useful Wii IOS files **FOR REGULAR WII**
+**/sysmenu** - Displays a link with downloads to 4.3 Wii System Menu files from all regions **FOR REGULAR WII**
+**/iosmini** - Displays a link with downloads to various useful Wii mini IOS files **FOR WII MINI**
+**/sysmenumini** - Displays a link with downloads to the Wii mini System Menu files from all regions **FOR WII MINI**
 **/vwii** - Displays the currently recommended vWii guide`);
    }
+
+   
 
 
 
@@ -137,6 +143,26 @@ Use Bluebomb for the Wii mini and Letterbomb for the regular Wii`);
     var ping = Date.now() - message.createdTimestamp + " ms";
     return message.channel.send("Pong! Your ping is " + `${ping}`);
     }
+
+    // IOS
+    if(cmd === `${prefix}ios`) {
+    return message.channel.send(`https://e.pcloud.link/publink/show?code=kZkXl7ZPmXnkI7kgm4FuArYqMAdAjE3V3wX`);
+    }
+
+    // System Menu
+    if(cmd === `${prefix}sysmenu`) {
+    return message.channel.send(`https://e.pcloud.link/publink/show?code=kZXXl7ZHiyDdjOKmJ0dVWTJNr6JuzYILkTy`);
+    } 
+    
+    // System Menu IOS
+    if(cmd === `${prefix}iosmini`) {
+    return message.channel.send(`https://e.pcloud.link/publink/show?code=kZ5zl7ZTmcoN1NyqqBkhVft5lC9kmDFkRiy`);
+    } 
+
+    // System Menu Wii mini
+    if(cmd === `${prefix}sysmenumini`) {
+    return message.channel.send(`https://e.pcloud.link/publink/show?code=kZVzl7ZkUOu6Nzqu24zTH00cUCPq5vncQFk`);
+    } 
 
 });
 
