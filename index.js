@@ -54,8 +54,9 @@ bot.on("message", async message => {
 **/wbm** - Shows a guide for organising your digital Wii game library
 **/sysmenumini** - Displays a link with downloads to the Wii mini System Menu files from all regions **FOR WII MINI**
 **/forwarders** - Installing forwarders for games
-**/vwii** - Displays the currently recommended vWii guide`);
-   }
+**/ytdeath** - Displays a meme and some reasons you should not use YouTube guides
+**/vwii** - Displays the currently recommended vWii guide`); 
+    }
 
     // Guide
     if(cmd === `${prefix}guide`) {
@@ -132,6 +133,8 @@ Kudos:
 shrek#7532 aka DerpMaster2 
 WiiMaster#7071 aka WiiExpertise 
 MethodOrMadness#9199 aka Method 
+Devnol#9366 aka CommandBlock6417
+oscie#1093 aka nothing
 and many others`);
     }
 
@@ -174,6 +177,17 @@ and many others`);
     // System Menu Wii mini
     if(cmd === `${prefix}sysmenumini`) {
     return message.channel.send(`https://e.pcloud.link/publink/show?code=kZVzl7ZkUOu6Nzqu24zTH00cUCPq5vncQFk`);
+    } 
+
+    // YouTube Tutorials
+    if(cmd === `${prefix}ytdeath`) {
+    return message.channel.send(`https://imgur.com/a/rw6amzX
+**__Why you should NOT use video guides.__**
+**Reasons to not use video guides:**
+- Most uploaders do not edit their guides after uploading, even if there are mistakes
+- When methods become outdated, the information is not updated
+- Difficult to give assistance with
+- Most videos also refer to a pre-packaged download, which are often outdated and poorly organised`);
     } 
 
     // Loader Troubleshooting
@@ -226,6 +240,5 @@ And congratulations, you just added a Wii game to your USB device manually. You'
     } 
 
 });
-
 
 bot.login(botconfig.token);
