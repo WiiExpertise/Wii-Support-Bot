@@ -27,45 +27,36 @@ bot.on("message", async message => {
     let args = messageArray[1]; // define command arguments
     let cmd = cmdOld.toLowerCase(); // redefine cmd to simplify most pf the code
 
-    // Help 
+    // Help
     if(cmd === `${prefix}help`) {
-    return message.channel.send(`**Commands List**
-    
-**__All Wii__**
+    return message.channel.send(`**__Commands list__**
 **/guide** - Displays the currently recommended guide
+**/bootmii** - Installing BootMii
 **/priiloader** - Installing Priiloader
+**/cios** - Installing cIOS **FOR REGULAR WII**
+**/ciosmini** - Installing cIOS **FOR WII MINI**
+**/usblgx** - Installing USBLoaderGX
+**/rc24** - Installing RiiConnect24
+**/wl24** - Installing WiiLink24
 **/wiimmfi** - Installing Wiimmfi
-**/forwarders** - Installing forwarders for games
 **/syscheck** - Performing a SysCheck
 **/more** - Displays more tutorials
 **/pins** - Informs the user about the useful info contained in the pinned messages
 **/sega** - Installing Nintendont 
-**/root** - Shows the user where the root of a storage device is
-**/mbr** - Displays a way to convert a drive to the MBR partition table 
-**/wbm** - Shows a guide for organising your digital Wii game library
-**/usblgx** - Installing USBLoaderGX
-**/ytdeath** - Displays a meme and some reasons you should not use YouTube guides
-    
-**__Normal Wii__**
-**/bootmii** - Installing BootMii
-**/cios** - Installing cIOS
-**/rc24** - Installing RiiConnect24
-**/wl24** - Installing WiiLink24
-**/ios** - Displays a link with downloads to various useful Wii IOS files 
-**/sysmenu** - Displays a link with downloads to 4.3 Wii System Menu files from all regions
-**/troubleshoot** - Displays 6 possible reasons your loader isn't working right away
- 
-**__Wii mini__**
-**/ciosmini** - Installing cIOS
-**/sysmenumini** - Displays a link with downloads to the Wii mini System Menu files from all regions 
-**/iosmini** - Displays a link with downloads to various useful Wii mini IOS files 
-**/troubleshootmini** - Displays 5 possible reasons your loader isn't working right away
-
-**__Extras__**
 **/credits** - Displays credits for the bot
 **/ping** - Displays the ping of the bot
+**/root** - Shows the user where the root of a storage device is
+**/ios** - Displays a link with downloads to various useful Wii IOS files **FOR REGULAR WII**
+**/sysmenu** - Displays a link with downloads to 4.3 Wii System Menu files from all regions **FOR REGULAR WII**
+**/iosmini** - Displays a link with downloads to various useful Wii mini IOS files **FOR WII MINI**
+**/troubleshoot** - Displays 6 possible reasons your loader isn't working right away
+**/mbr** - Displays a way to convert a drive to the MBR partition table 
+**/wbm** - Shows a guide for organising your digital Wii game library
+**/sysmenumini** - Displays a link with downloads to the Wii mini System Menu files from all regions **FOR WII MINI**
+**/forwarders** - Installing forwarders for games
+**/ytdeath** - Displays a meme and some reasons you should not use YouTube guides
 **/vwii** - Displays the currently recommended vWii guide`); 
-    }    
+    }
 
     // Guide
     if(cmd === `${prefix}guide`) {
@@ -154,8 +145,8 @@ and many others`);
     
     // Forwarders
     if(cmd === `${prefix}forwarders`) {
-    return message.channel.send(`https://wii.guide/wiigsc`);
-    }
+        return message.channel.send(`https://wii.guide/wiigsc`);
+        }
 
     // Root
     if(cmd === `${prefix}root`) {
@@ -247,19 +238,6 @@ After you have the game folder, which is inside the "wbfs" folder, plop your fil
         
 And congratulations, you just added a Wii game to your USB device manually. You'll get faster the more you do it.`);
     } 
-
-    // Wii mini Troubleshooting
-    if(cmd === `${prefix}troubleshootmini`) {
-    return message.channel.send(`1: cIOS is not set up correctly (follow https://wii.guide/cios-mini). We can only confirm it is done right with a syscheck (follow https://wii.guide/syscheck).
-
-2: Image is bad/corrupted. Testable in Dolphin Emulator. Make sure it's wbfs or iso (not nkit) if you're trying to play a Wii game.
-        
-3: Use the latest version of your loader, use default settings and name the games as such for Wii games> USB:/wbfs/GameName [GameID]/GameID.wbfs
-        
-4: USB isn't compatible. That is most likely to happen with flash drives. HDDs are always the best way to store games on the Wii.
-        
-5: Don't use a forwarder. Launch the app directly from the Homebrew Channel.`);
-    }
 
 });
 
