@@ -45,12 +45,12 @@ bot.on("message", async message => {
 **/wbm** - Shows a guide for organising your digital Wii game library
 **/usblgx** - Installing USBLoaderGX
 **/ytdeath** - Displays a meme and some reasons you should not use YouTube guides
-    
+**/wl24** - Installing WiiLink24   
+
 **__Normal Wii__**
 **/bootmii** - Installing BootMii
 **/cios** - Installing cIOS
 **/rc24** - Installing RiiConnect24
-**/wl24** - Installing WiiLink24
 **/ios** - Displays a link with downloads to various useful Wii IOS files 
 **/sysmenu** - Displays a link with downloads to 4.3 Wii System Menu files from all regions
 **/troubleshoot** - Displays 6 possible reasons your loader isn't working right away
