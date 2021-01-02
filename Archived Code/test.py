@@ -21,7 +21,7 @@ async def on_message(message):
 
 
 # run client on discord server
-client.run('Nzk0NjI5MTUzMDkzMTg5NjYy.X-9mEQ.sr4ZSiipPWXOyIL04rzApHgWWcw')
+client.run('your-token-here')
 
 
 
