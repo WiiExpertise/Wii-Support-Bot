@@ -6,7 +6,7 @@ from discord.ext import commands
 client = commands.Bot(command_prefix='/')
 
 #sends message to console that the client is online
-print('I am online')
+print('i am online')
 
 # sets activity
 @client.event
