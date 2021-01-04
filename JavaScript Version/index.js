@@ -11,7 +11,7 @@ var minute = date.getMinutes(); // timing stuff for command logging
 bot.on("ready", async () => {
     console.log(`${bot.user.username} is online!`);
     console.log(`${bot.user.username} Version: ${botconfig.version}`);
-    bot.user.setActivity(`${botconfig.prefix}help`, { type: 'LISTENING' }); // set activity and log some stuff
+    bot.user.setActivity(`${botconfig.prefix}cmds`, { type: 'LISTENING' }); // set activity and log some stuff
 });
 
 bot.on("message", async message => {
@@ -27,8 +27,8 @@ bot.on("message", async message => {
     let args = messageArray[1]; // define command arguments
     let cmd = cmdOld.toLowerCase(); // redefine cmd to simplify most pf the code
 
-    // Help
-    if(cmd === `${prefix}help`) {
+    // CMDS
+    if(cmd === `${prefix}cmds`) {
     return message.channel.send(`**Commands List**
     
 **__All Wii__**
