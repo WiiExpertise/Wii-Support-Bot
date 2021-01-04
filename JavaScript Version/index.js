@@ -27,7 +27,7 @@ bot.on("message", async message => {
     let args = messageArray[1]; // define command arguments
     let cmd = cmdOld.toLowerCase(); // redefine cmd to simplify most pf the code
 
-    // Help 
+    // Help
     if(cmd === `${prefix}help`) {
     return message.channel.send(`**Commands List**
     
