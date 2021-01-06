@@ -64,8 +64,11 @@ bot.on("message", async message => {
 **__Extras__**
 **/credits** - Displays credits for the bot
 **/ping** - Displays the ping of the bot
+**/bing** - Sends back a message that says bong
+**/ching** - Sends back a message that says chong
 **/vwii** - Displays the currently recommended vWii guide`); 
-    }    
+    }  
+
 
     // Guide
     if(cmd === `${prefix}guide`) {
@@ -260,6 +263,16 @@ And congratulations, you just added a Wii game to your USB device manually. You'
         
 5: Don't use a forwarder. Launch the app directly from the Homebrew Channel.`);
     }
+
+    // Bing
+    if(cmd === `${prefix}bing`) {
+    return message.channel.send(`bong`);
+        }    
+
+    // Ching
+    if(cmd === `${prefix}ching`) {
+    return message.channel.send(`chong`);
+        } 
 
 });
 
