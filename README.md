@@ -3,4 +3,4 @@
 
 Contact me on Discord to report issues with the bots. akisblack#2545
 
-note: the javascript version is better kek
+Note: The Python version may be less feature rich and have some bugs as it is not updated as regularly as the JavaScript version.
