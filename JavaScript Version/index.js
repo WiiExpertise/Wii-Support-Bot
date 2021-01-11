@@ -51,14 +51,14 @@ bot.on("message", async message => {
 **/bootmii** - Installing BootMii
 **/cios** - Installing cIOS
 **/rc24** - Installing RiiConnect24
-**/ios** - Displays a link with downloads to various useful Wii IOS files 
-**/sysmenu** - Displays a link with downloads to 4.3 Wii System Menu files from all regions
+**/ios** - Displays a link with downloads to various useful Wii IOS files - **Currently not working**
+**/sysmenu** - Displays a link with downloads to 4.3 Wii System Menu files from all regions - **Currently not working**
 **/troubleshoot** - Displays 6 possible reasons your loader isn't working right away
  
 **__Wii mini__**
 **/ciosmini** - Installing cIOS
-**/sysmenumini** - Displays a link with downloads to the Wii mini System Menu files from all regions 
-**/iosmini** - Displays a link with downloads to various useful Wii mini IOS files 
+**/sysmenumini** - Displays a link with downloads to the Wii mini System Menu files from all regions - **Currently not working** 
+**/iosmini** - Displays a link with downloads to various useful Wii mini IOS files - **Currently not working**
 **/troubleshootmini** - Displays 5 possible reasons your loader isn't working right away
 
 **__Extras__**

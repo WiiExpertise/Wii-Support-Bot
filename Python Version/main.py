@@ -88,7 +88,9 @@ async def forwarders(context):
 async def root(context):
     await context.message.channel.send('https://imgur.com/a/HDCWvt0')
 
-# TODO: PING COMMAND    
+@client.command()
+async def ping(context):
+    await context.send('Pong! Your ping is{0}'.format(round(client.latency, 1)))
 
 @client.command(name='ios')
 async def ios(context):
