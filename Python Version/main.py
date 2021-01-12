@@ -90,7 +90,7 @@ async def root(context):
 
 @client.command()
 async def ping(context):
-    await context.send('Pong! Your ping is{0}'.format(round(client.latency, 1)))
+    await context.send('Pong! Your ping is {0} sec'.format(round(client.latency, 1)))
 
 @client.command(name='ios')
 async def ios(context):
