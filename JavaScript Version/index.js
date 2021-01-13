@@ -3,23 +3,27 @@ const Discord = require("discord.js");
 
 const bot = new Discord.Client({disableEveryone: true});
 
+// Add times to logging on console
 var date = new Date();
 var hour = date.getHours();
 var twelvehour = date.getHours();
-var minute = date.getMinutes(); // timing stuff for command logging
+var minute = date.getMinutes();
 
+// Set activity and log to console
 bot.on("ready", async () => {
     console.log(`${bot.user.username} is online!`);
     console.log(`${bot.user.username} Version: ${botconfig.version}`);
-    bot.user.setActivity(`${botconfig.prefix}cmds`, { type: 'LISTENING' }); // set activity and log some stuff
+    bot.user.setActivity(`${botconfig.prefix}cmds`, { type: 'LISTENING' });
 });
 
+// Tell people to fuck off when DMing
 bot.on("message", async message => {
     if(message.author.bot) return;
     if(message.channel.type === "dm") {
-    return message.channel.send(`This is a DM, I am dumb and only work in servers. bing bong :)`)
-    }; // return if someone dms our bot
+    return message.channel.send(`This is a DM, I only work in servers`)
+    };     
     
+    // Simplify or define stuff
     let prefix = botconfig.prefix; // simplify prefix
     let version = botconfig.version; // simplify version
     let messageArray = message.content.split(" "); //split
@@ -27,9 +31,9 @@ bot.on("message", async message => {
     let args = messageArray[1]; // define command arguments
     let cmd = cmdOld.toLowerCase(); // redefine cmd to simplify most pf the code
 
-    // CMDS
+    // Commands
     if(cmd === `${prefix}cmds`) {
-    return message.channel.send(`**Commands List**
+    return message.channel.send(`**Commands**
     
 **__All Wii__**
 **/guide** - Displays the currently recommended guide
@@ -46,8 +50,10 @@ bot.on("message", async message => {
 **/usblgx** - Installing USBLoaderGX
 **/ytdeath** - Displays a meme and some reasons you should not use YouTube guides
 **/wl24** - Installing WiiLink24   
+**/bootmii** - Installing themes to the Wii Menu
 
 **__Normal Wii__**
+**/letterbomb** - Running the Letterbomb exploit
 **/bootmii** - Installing BootMii
 **/cios** - Installing cIOS
 **/rc24** - Installing RiiConnect24
@@ -56,6 +62,7 @@ bot.on("message", async message => {
 **/troubleshoot** - Displays 6 possible reasons your loader isn't working right away
  
 **__Wii mini__**
+**/bluebomb** - Running the Bluebomb exploit
 **/ciosmini** - Installing cIOS
 **/sysmenumini** - Displays a link with downloads to the Wii mini System Menu files from all regions - **Currently not working** 
 **/iosmini** - Displays a link with downloads to various useful Wii mini IOS files - **Currently not working**
@@ -64,79 +71,74 @@ bot.on("message", async message => {
 **__Extras__**
 **/credits** - Displays credits for the bot
 **/ping** - Displays the ping of the bot
-**/bing** - Sends back a message that says bong
-**/ching** - Sends back a message that says chong
 **/vwii** - Displays the currently recommended vWii guide`); 
     }  
 
-
-    // Guide
     if(cmd === `${prefix}guide`) {
-    return message.channel.send(`https://wii.guide/
+    return message.channel.send(`https://wii.guide/get-started
 Use Bluebomb for the Wii mini and Letterbomb for the regular Wii`);
     }
 
-    // BootMii
+    if(cmd === `${prefix}letterbomb`) {
+    return message.channel.send(`https://wii.guide/letterbomb`);
+    }    
+
+    if(cmd === `${prefix}bluebomb`) {
+    return message.channel.send(`https://wii.guide/bluebomb`);
+    }   
+
+    if(cmd === `${prefix}themes`) {
+    return message.channel.send(`https://wii.guide/themes`);
+    }    
+
     if(cmd === `${prefix}bootmii`) {
     return message.channel.send(`https://wii.guide/hbc`);
     }
    
-    // Priiloader
     if(cmd === `${prefix}priiloader`) {
     return message.channel.send(`https://wii.guide/priiloader`);
     }
 
-    // cIOS
     if(cmd === `${prefix}cios`) {
     return message.channel.send(`https://wii.guide/cios`);
     }
             
-    // cIOS Wii mini
     if(cmd === `${prefix}ciosmini`) {
     return message.channel.send(`https://wii.guide/cios-mini`);
     }
 
-    // USB Loader GX
     if(cmd === `${prefix}usblgx`) {
     return message.channel.send(`https://wii.guide/usbloadergx`);
     }
 
-    // RiiConnect24
     if(cmd === `${prefix}rc24`) {
     return message.channel.send(`https://wii.guide/riiconnect24`);
     }
 
-    // WiiLink24
     if(cmd === `${prefix}wl24`) {
     return message.channel.send(`https://wii.guide/wiilink24`);
     }
 
-    // Wiimmfi
     if(cmd === `${prefix}wiimmfi`) {
     return message.channel.send(`https://wii.guide/wiimmfi`);
     }
 
-    // SysCheck
     if(cmd === `${prefix}syscheck`) {
     return message.channel.send(`https://wii.guide/syscheck`);
     }
 
-    // More
     if(cmd === `${prefix}more`) {
     return message.channel.send(`https://wii.guide/site-navigation https://bloodythorn.github.io/wiihacks-wiki/`);
     }
 
-    // Pins
     if(cmd === `${prefix}pins`) {
     return message.channel.send(`Please check the pinned messages for more guides`);
     }
 
-    // Nintendont
     if(cmd === `${prefix}sega`) {
     return message.channel.send(`https://bloodythorn.github.io/wiihacks-wiki/tutorials/nintendont.html`);
     }
 
-    // Credits
     if(cmd === `${prefix}credits`) {
     return message.channel.send(`Bot creator: 
 akisblack#2545
@@ -150,48 +152,39 @@ oscie#1093 aka nothing
 and many others`);
     }
 
-    // vWii
     if(cmd === `${prefix}vwii`) {
     return message.channel.send(`https://wiiu.hacks.guide/#/vwii-modding`);
     }
     
-    // Forwarders
     if(cmd === `${prefix}forwarders`) {
     return message.channel.send(`https://wii.guide/wiigsc`);
     }
 
-    // Root
     if(cmd === `${prefix}root`) {
     return message.channel.send(`https://imgur.com/a/HDCWvt0`);
     }
 
-    // Ping
     if (cmd === `${prefix}ping`) {
     var ping = Date.now() - message.createdTimestamp + " ms";
-    return message.channel.send("Pong! Your ping is " + `${ping}`);
+    return message.channel.send("Pong! The bot's ping is " + `${ping}`);
     }
 
-    // IOS
     if(cmd === `${prefix}ios`) {
-    return message.channel.send(`https://e.pcloud.link/publink/show?code=kZkXl7ZPmXnkI7kgm4FuArYqMAdAjE3V3wX`);
+    return message.channel.send(`I am on life support, leave me alone`);
     }
 
-    // System Menu
     if(cmd === `${prefix}sysmenu`) {
-    return message.channel.send(`https://e.pcloud.link/publink/show?code=kZXXl7ZHiyDdjOKmJ0dVWTJNr6JuzYILkTy`);
+    return message.channel.send(`I am on life support, leave me alone`);
     } 
     
-    // System Menu IOS
     if(cmd === `${prefix}iosmini`) {
-    return message.channel.send(`https://e.pcloud.link/publink/show?code=kZ5zl7ZTmcoN1NyqqBkhVft5lC9kmDFkRiy`);
+    return message.channel.send(`I am on life support, leave me alone`);
     } 
 
-    // System Menu Wii mini
     if(cmd === `${prefix}sysmenumini`) {
-    return message.channel.send(`https://e.pcloud.link/publink/show?code=kZVzl7ZkUOu6Nzqu24zTH00cUCPq5vncQFk`);
+    return message.channel.send(`I am on life support, leave me alone`);
     } 
 
-    // YouTube Tutorials
     if(cmd === `${prefix}ytdeath`) {
     return message.channel.send(`https://imgur.com/a/rw6amzX
 **__Why you should NOT use video guides.__**
@@ -202,7 +195,6 @@ and many others`);
 - Most videos also refer to a pre-packaged download, which are often outdated and poorly organised`);
     } 
 
-    // Loader Troubleshooting
     if(cmd === `${prefix}troubleshoot`) {
     return message.channel.send(`1: Wrong USB port. The only USB port that can run game backups is the one on the edge of the Wii, unless you are using d2x beta53-alt cIOS, which is not recommended as it is not as compatible.
 
@@ -217,14 +209,12 @@ and many others`);
 6: Don't use a forwarder. Launch the app directly from the Homebrew Channel.`);
     } 
     
-    // MBR
     if(cmd === `${prefix}mbr`) {
     return message.channel.send(`To change a drive to MBR on Windows, open disk management. If you're on Windows 8 or higher, do Windows key + X and click on disk management.
 
 Once you're there, find the drive you need to convert to MBR and right click on the area where it says "Disk" and then the number of the disc. If it's not already MBR, you'll see an available option to convert to MBR disk. Use that option.`);
     } 
 
-    // Organising Games
     if(cmd === `${prefix}wbm`) {
     return message.channel.send(`The best way to fix Wii Backup Manager not working is by deleting Wii Backup Manager and never looking back.
 
@@ -251,7 +241,6 @@ After you have the game folder, which is inside the "wbfs" folder, plop your fil
 And congratulations, you just added a Wii game to your USB device manually. You'll get faster the more you do it.`);
     } 
 
-    // Wii mini Troubleshooting
     if(cmd === `${prefix}troubleshootmini`) {
     return message.channel.send(`1: cIOS is not set up correctly (follow https://wii.guide/cios-mini). We can only confirm it is done right with a syscheck (follow https://wii.guide/syscheck).
 
@@ -263,16 +252,6 @@ And congratulations, you just added a Wii game to your USB device manually. You'
         
 5: Don't use a forwarder. Launch the app directly from the Homebrew Channel.`);
     }
-
-    // Bing
-    if(cmd === `${prefix}bing`) {
-    return message.channel.send(`bong`);
-        }    
-
-    // Ching
-    if(cmd === `${prefix}ching`) {
-    return message.channel.send(`chong`);
-        } 
 
 });
 
