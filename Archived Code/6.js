@@ -1,29 +1,32 @@
+const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
+
 const bot = new Discord.Client({disableEveryone: true});
-const token = ("YOUR-TOKEN-HERE");
 
 // Set activity and log to console
 bot.on("ready", async () => {
-    console.log(`I am online`);
-    bot.user.setPresence( { activity: { name: `/help` }, type: 'LISTENING' });
+    console.log(`${bot.user.username} is online!`);
+    console.log(`${bot.user.username} Version: ${botconfig.version}`);
+    bot.user.setPresence( { activity: { name: `${botconfig.prefix}help` }, type: 'LISTENING' });
 });
 
 // Tell people to fuck off when DMing
 bot.on("message", async message => {
     if(message.author.bot) return;
     if(message.channel.type === "dm") {
-    return sendMsg(`This is a DM. I only work in servers.`)
+        return sendMsg(`Sorry ${message.author.username} This is a DM. I only work in servers.`)
     }; 
     
-    // Simplify or define stuff
-    let prefix = "/"; // simplify prefix
-    let messageArray = message.content.split(" "); // split
+    let prefix = botconfig.prefix; // simplify prefix
+    let version = botconfig.version; // simplify version
+    let messageArray = message.content.split(" "); //split
     let cmdOld = messageArray[0]; // define command
     let cmd = cmdOld.toLowerCase(); // redefine cmd to simplify most pf the code
+    let pingRX = /<@!\d+>/; // regex to detect if a mention is used
     function sendMsg(content) { message.channel.send(content) } // message send
 
     // Commands
-    if(cmd === `${prefix}help`) return sendMsg(`**__All Wii__**\n**/guide** - Displays the currently recommended guide\n**/priiloader** - Installing Priiloader\n**/bluebomb** - Running the Bluebomb exploit\n**/wiimmfi** - Installing Wiimmfi\n**/forwarders** - Installing forwarders for games\n**/syscheck** - Performing a SysCheck\n**/more** - Displays more tutorials\n**/pins** - Informs the user about the useful info contained in the pinned messages\n**/sega** - Installing Nintendont\n**/root** - Shows the user where the root of a storage device is\n**/mbr** - Displays a way to convert a drive to the MBR partition table\n**/wbm** - Shows a guide for organising your digital Wii game library\n**/usblgx** - Installing USBLoaderGX\n**/ytdeath** - Displays a meme and some reasons you should not use YouTube guides\n**/wl24** - Installing WiiLink24\n**/themes** - Installing themes to the Wii Menu\n\n**__Normal Wii__**\n**/letterbomb** - Running the Letterbomb exploit\n**/bootmii** - Installing BootMii\n**/cios** - Installing cIOS\n**/rc24** - Installing RiiConnect24\n**/troubleshoot** - Displays 6 possible reasons your loader isn't working right away\n\n**__Wii mini__**\n**/ciosmini** - Installing cIOS\n**/troubleshootmini** - Displays 5 possible reasons your loader isn't working right away\n\n**__Extras__**\n**/credits** - Displays credits for the bot\n**/ping** - Displays the ping of the bot\n**/g** - Search with the Google API\n**/vwii** - Displays the currently recommended vWii guide`); 
+    if(cmd === `${prefix}cmds`) return sendMsg(`**Commands**\n\n**__All Wii__**\n**/guide** - Displays the currently recommended guide\n**/priiloader** - Installing Priiloader\n**/wiimmfi** - Installing Wiimmfi\n**/forwarders** - Installing forwarders for games\n**/syscheck** - Performing a SysCheck\n**/more** - Displays more tutorials\n**/pins** - Informs the user about the useful info contained in the pinned messages\n**/sega** - Installing Nintendont\n**/root** - Shows the user where the root of a storage device is\n**/mbr** - Displays a way to convert a drive to the MBR partition table\n**/wbm** - Shows a guide for organising your digital Wii game library\n**/usblgx** - Installing USBLoaderGX\n**/ytdeath** - Displays a meme and some reasons you should not use YouTube guides\n**/wl24** - Installing WiiLink24\n**/themes** - Installing themes to the Wii Menu\n\n**__Normal Wii__**\n**/letterbomb** - Running the Letterbomb exploit\n**/bootmii** - Installing BootMii\n**/cios** - Installing cIOS\n**/rc24** - Installing RiiConnect24\n**/ios** - Displays a link with downloads to various useful Wii IOS files - **Currently not working**\n**/sysmenu** - Displays a link with downloads to 4.3 Wii System Menu files from all regions - **Currently not working**\n**/troubleshoot** - Displays 6 possible reasons your loader isn't working right away\n\n**__Wii mini__**\n**/bluebomb** - Running the Bluebomb exploit\n**/ciosmini** - Installing cIOS\n\n**/sysmenumini** - Displays a link with downloads to the Wii mini System Menu files from all regions - **Currently not working**\n**/iosmini** - Displays a link with downloads to various useful Wii mini IOS files - **Currently not working**\n**/troubleshootmini** - Displays 5 possible reasons your loader isn't working right away\n\n**__Extras__**\n**/credits** - Displays credits for the bot\n**/ping** - Displays the ping of the bot\n**/g** - Search with the Google API\n**/vwii** - Displays the currently recommended vWii guide`); 
     
     if(cmd === `${prefix}guide`) return sendMsg(`https://wii.guide/get-started\nUse Bluebomb for the Wii mini and Letterbomb for the regular Wii`);
 
@@ -57,7 +60,7 @@ bot.on("message", async message => {
     
     if(cmd === `${prefix}sega`) return sendMsg(`https://bloodythorn.github.io/wiihacks-wiki/tutorials/nintendont.html`);
     
-    if(cmd === `${prefix}credits`) return sendMsg(`Bot creator:\nakisblack#2545\n\nKudos:\nshrek#7532\nWiiMaster#7071\nMethodOrMadness#9199\nDevnol#9366\noscie#1093`);
+    if(cmd === `${prefix}credits`) return sendMsg(`Bot creator:\nakisblack#2545\n\nKudos:\nshrek#7532 aka DerpMaster2\nWiiMaster#7071 aka WiiExpertise\nMethodOrMadness#9199 aka Method\nDevnol#9366 aka CommandBlock6417\noscie#1093 aka nothing\nand many others`);
     
     if(cmd === `${prefix}vwii`) return sendMsg(`https://wiiu.hacks.guide/#/vwii-modding`);
     
@@ -65,7 +68,15 @@ bot.on("message", async message => {
     
     if(cmd === `${prefix}root`) return sendMsg(`https://imgur.com/a/HDCWvt0`);
     
-    if(cmd === `${prefix}ytdeath`) return sendMsg(`https://imgur.com/a/rw6amzX\n**__Why you should NOT use video guides.__**\n- Most uploaders do not edit their guides after uploading, even if there are mistakes\n- When methods become outdated, the information is not updated\n- Difficult to give assistance with\n- Most videos also refer to a pre-packaged download, which are often outdated and poorly organised`);
+    if(cmd === `${prefix}ios`) return sendMsg(`I am on life support, leave me alone`);
+    
+    if(cmd === `${prefix}sysmenu`) return sendMsg(`I am on life support, leave me alone`);
+    
+    if(cmd === `${prefix}iosmini`) return sendMsg(`I am on life support, leave me alone`);
+    
+    if(cmd === `${prefix}sysmenumini`) return sendMsg(`I am on life support, leave me alone`);
+    
+    if(cmd === `${prefix}ytdeath`) return sendMsg(`https://imgur.com/a/rw6amzX\n**__Why you should NOT use video guides.__**\n**Reasons to not use video guides:**\n- Most uploaders do not edit their guides after uploading, even if there are mistakes\n- When methods become outdated, the information is not updated\n- Difficult to give assistance with\n- Most videos also refer to a pre-packaged download, which are often outdated and poorly organised`);
     
     if(cmd === `${prefix}troubleshoot`) return sendMsg(`1: Wrong USB port. The only USB port that can run game backups is the one on the edge of the Wii, unless you are using d2x beta53-alt cIOS, which is not recommended as it is not as compatible.\n\n2: cIOS is not set up correctly (follow https://wii.guide/cios). We can only confirm it is done right with a syscheck (follow https://wii.guide/syscheck). Keep in mind that some games that use accessories will require a different IOS to run.\n\n3: Image is bad/corrupted. Testable in Dolphin Emulator. Make sure it's wbfs or iso (not nkit) if you're trying to play a Wii game.\n\n4: Use the latest version of your loader, use default settings and name the games as such for Wii games> USB:/wbfs/GameName [GameID]/GameID.wbfs\n\n5: USB isn't compatible. That is most likely to happen with flash drives. HDDs are always the best way to store games on the Wii.\n\n6: Don't use a forwarder. Launch the app directly from the Homebrew Channel.`);
     
@@ -83,5 +94,4 @@ bot.on("message", async message => {
 
 });
 
-bot.login(token);
-
+bot.login(botconfig.token);
