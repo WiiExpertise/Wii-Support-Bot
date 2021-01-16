@@ -1,0 +1,26 @@
+{
+  "name": "wii-support-bot",
+  "version": "1.0.0",
+  "description": "A Discord bot written in JavaScript and Python to help users hack their Wii ",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akisblack/Wii-Support-Bot.git"
+  },
+  "keywords": [
+    "discord-bot"
+  ],
+  "author": "akisblack",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akisblack/Wii-Support-Bot/issues"
+  },
+  "homepage": "https://github.com/akisblack/Wii-Support-Bot#readme"
+}
