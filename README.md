@@ -1,5 +1,5 @@
 # Wii Support Bot
-### A Discord bot written in JavaScript and Python to help users hack their Wii 
+### A Discord bot written in JavaScript to help users hack their Wii 
 
 
 ## Installation
@@ -13,4 +13,4 @@
 The Python version is officially only here for archival reasons and will get no more updates.
 
 ## Contact the owner
-Contact me on Discord to report issues with the bots. akisblack#2545
+Contact me on Discord to report issues with the bot. akisblack#2545
