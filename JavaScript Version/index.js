@@ -53,11 +53,11 @@ bot.on("message", async message => {
     
     if(cmd === `${prefix}syscheck`) return sendMsg(`https://wii.guide/syscheck`);
     
-    if(cmd === `${prefix}more`) return sendMsg(`https://wii.guide/site-navigation\nhttps://bloodythorn.github.io/wiihacks-wiki/`);
+    if(cmd === `${prefix}more`) return sendMsg(`https://wii.guide/site-navigation`);
     
     if(cmd === `${prefix}pins`) return sendMsg(`Please check the pinned messages for more guides`);
     
-    if(cmd === `${prefix}sega`) return sendMsg(`https://bloodythorn.github.io/wiihacks-wiki/tutorials/nintendont.html`);
+    if(cmd === `${prefix}sega`) return sendMsg(`https://akisblack.github.io/wii%20stuff/nintendont`);
     
     if(cmd === `${prefix}credits`) return sendMsg(`Bot creator:\nakisblack#2545\n\nKudos:\nshrek#7532\nWiiMaster#7071\nMethodOrMadness#9199\nDevnol#9366\noscie#1093`);
     
