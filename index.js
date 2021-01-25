@@ -59,9 +59,9 @@ bot.on("message", async message => { if(message.author.bot) return; if(message.c
     
     if(cmd === `${prefix}forwarders`) return sendMsg(`https://wii.guide/wiigsc`);
     
-    if(cmd === `${prefix}root`) return sendMsg(`https://imgur.com/a/HDCWvt0`);
+    if(cmd === `${prefix}root`) return sendMsg(`https://akisblack.github.io/wii%20stuff/root.png`);
     
-    if(cmd === `${prefix}ytdeath`) return sendMsg(`https://imgur.com/a/rw6amzX\n**__Why you should NOT use video guides.__**\n- Most uploaders do not edit their guides after uploading, even if there are mistakes\n- When methods become outdated, the information is not updated\n- Difficult to give assistance with\n- Most videos also refer to a pre-packaged download, which are often outdated and poorly organised`);
+    if(cmd === `${prefix}ytdeath`) return sendMsg(`https://akisblack.github.io/wii%20stuff/ytdeath.png\n**__Why you should NOT use video guides.__**\n- Most uploaders do not edit their guides after uploading, even if there are mistakes\n- When methods become outdated, the information is not updated\n- Difficult to give assistance with\n- Most videos also refer to a pre-packaged download, which are often outdated and poorly organised`);
     
     if(cmd === `${prefix}troubleshoot`) return sendMsg(`**__Loader Troubleshooting__**\n**1.** Wrong USB port. The only USB port that can run game backups is the one on the edge of the Wii, unless you are using d2x beta53-alt cIOS, which is not recommended as it is not as compatible.\n\n**2.** cIOS is not set up correctly (follow https://wii.guide/cios). We can only confirm it is done right with a syscheck (follow https://wii.guide/syscheck).\n\n**3.** Image is bad/corrupted. Testable in Dolphin Emulator. Make sure it's wbfs or iso (not nkit, gcz or rvz) if you're trying to play a Wii game.\n\n**4.** Use the latest version of your loader, use default settings and name the games as such for Wii games> USB:/wbfs/GameName [GameID]/GameID.wbfs\n\n**5.** USB isn't compatible. That is most likely to happen with flash drives. HDDs are always the best way to store games on the Wii.\n\n**6.** Don't use a forwarder. Launch the app directly from The Homebrew Channel.`);
     
