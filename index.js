@@ -53,7 +53,7 @@ bot.on("message", async message => { if(message.author.bot) return; if(message.c
     
     if(cmd === `${prefix}sega`) return sendMsg(`https://akisblack.github.io/wii%20stuff/nintendont`);
     
-    if(cmd === `${prefix}credits`) return sendMsg(`Bot creator:\nakisblack#2545\n\nKudos:\nshrek#7532\nWiiMaster#7071\nMethodOrMadness#9199\nDevnol#9366\noscie#1093`);
+    if(cmd === `${prefix}credits`) return sendMsg(`Bot creator:\nakisblack#2545\n\nKudos:\nshrek#7532\nWiiMaster#7071\nMethodOrMadness#9199\nDevnol#9366\noscie#1093\nAndyRogi#1812`);
     
     if(cmd === `${prefix}vwii`) return sendMsg(`https://wiiu.hacks.guide/#/vwii-modding`);
     
