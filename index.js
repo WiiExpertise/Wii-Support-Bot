@@ -73,6 +73,8 @@ bot.on("message", async message => { if(message.author.bot) return; if(message.c
     
     if(cmd === `${prefix}troubleshootmini`) return sendMsg(`**__Loader Troubleshooting__**\n**1.** cIOS is not set up correctly (follow https://wii.guide/cios-mini). We can only confirm it is done right with a syscheck (follow https://wii.guide/syscheck).\n\n**2.** Image is bad/corrupted. Testable in Dolphin Emulator. Make sure it's wbfs or iso (not nkit, gcz or rvz) if you're trying to play a Wii game.\n\n**3.** Use the latest version of your loader, use default settings and name the games as such for Wii games> USB:/wbfs/GameName [GameID]/GameID.wbfs\n\n**4.** USB isn't compatible. That is most likely to happen with flash drives. HDDs are always the best way to store games on the Wii.\n\n**5.** Don't use a forwarder. Launch the app directly from the Homebrew Channel.`);
     
+    if(cmd === `${prefix}testcmd`) return sendMsg(`https://akisblack.github.io/wii%20stuff/root.png`);                                    
+                                    
     if(cmd === `${prefix}g`) {
         let query = message.content.replace(`${prefix}g`, '');
         query = encodeURIComponent(query.trim());
