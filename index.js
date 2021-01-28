@@ -23,7 +23,7 @@ bot.on("message", async message => { if(message.author.bot) return; if(message.c
 
     if(cmd === `${prefix}letterbomb`) return sendMsg(`https://wii.guide/letterbomb`);
     
-    if(cmd === `${prefix}cleanrip`) return sendMsg(`https://wii.guide/cleanrip`);    
+    if(cmd === `${prefix}cleanrip`) return sendMsg(`https://wii.guide/dump-games`);    
 
     if(cmd === `${prefix}bluebomb`) return sendMsg(`https://wii.guide/bluebomb`);
        
