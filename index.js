@@ -17,7 +17,7 @@ let cmd = cmdOld.toLowerCase(); // redefine cmd to simplify most pf the code
 function sendMsg(content) { message.channel.send(content) } // message send
 
 // Commands
-if(cmd === `${prefix}help`) return sendMsg(`**__All Wii__**\n**/guide** - Displays the currently recommended guide\n**/priiloader** - Installing Priiloader\n**/bluebomb** - Running the Bluebomb exploit\n**/wiimmfi** - Installing Wiimmfi\n**/forwarders** - Installing forwarders for games\n**/syscheck** - Performing a SysCheck\n**/cleanrip** - Ripping games from disc\n**/more** - Displays more tutorials\n**/pins** - Informs the user about the useful info contained in the pinned messages\n**/sega** - Installing Nintendont\n**/root** - Shows the user where the root of a storage device is\n**/structure** - Displays the way to organise your apps and games in the easiest way possible\n**/mbr** - Displays a way to convert a drive to the MBR partition table\n**/wbm** - Shows a guide for organising your digital Wii game library\n**/usblgx** - Installing USBLoaderGX\n**/wfl** - Installing WiiFlow Lite\n**/ytdeath** - Displays a meme and some reasons you should not use YouTube guides\n**/wl24** - Installing WiiLink24\n**/themes** - Installing themes to the Wii Menu\n\n**__Normal Wii__**\n**/letterbomb** - Running the Letterbomb exploit\n**/bootmii** - Installing BootMii\n**/cios** - Installing cIOS\n**/rc24** - Installing RiiConnect24\n**/troubleshoot** - Displays 6 possible reasons your loader isn't working right away\n\n**__Wii mini__**\n**/ciosmini** - Installing cIOS\n**/troubleshootmini** - Displays 5 possible reasons your loader isn't working right away\n\n**__Extras__**\n**/credits** - Displays credits for the bot\n**/ping** - Displays the ping of the bot\n**/g** - Search with the Google API\n**/vwii** - Displays the currently recommended vWii guide`); 
+if(cmd === `${prefix}help`) return sendMsg(`**__All Wii__**\n**/guide** - Displays the currently recommended guide\n**/priiloader** - Installing Priiloader\n**/bluebomb** - Running the Bluebomb exploit\n**/wiimmfi** - Installing Wiimmfi\n**/forwarders** - Installing forwarders for games\n**/syscheck** - Performing a SysCheck\n**/cleanrip** - Ripping games from disc\n**/more** - Displays more tutorials\n**/pins** - Informs the user about the useful info contained in the pinned messages\n**/sega** - Installing Nintendont\n**/root** - Shows the user where the root of a storage device is\n**/structure** - Displays the way to organise your apps and games in the easiest way possible\n**/mbr** - Displays a way to convert a drive to the MBR partition table\n**/wbm** - Shows a guide for organising your digital Wii game library\n**/usblgx** - Installing USBLoaderGX\n**/wfl** - Installing WiiFlow Lite\n**/ytdeath** - Displays a meme and some reasons you should not use YouTube guides\n**/wl24** - Installing WiiLink24\n**/themes** - Installing themes to the Wii Menu\n\n**__Normal Wii__**\n**/letterbomb** - Running the Letterbomb exploit\n**/bootmii** - Installing BootMii\n**/cios** - Installing cIOS\n**/rc24** - Installing RiiConnect24\n**/troubleshoot** - Displays 6 possible reasons your loader isn't working right away\n\n**__Wii mini__**\n**/ciosmini** - Installing cIOS\n**/troubleshootmini** - Displays 5 possible reasons your loader isn't working right away\n\n**__Extras__**\n**/credits** - Displays credits for the bot\n**/ping** - Displays the ping of the bot\n**/g** - Search with the Google API\n**/vwii** - Displays the currently recommended vWii guide\n**/invite** - Links to an invite for the bot`); 
 
 if(cmd === `${prefix}guide`) return sendMsg(`https://wii.guide\nUse Bluebomb for the Wii mini and Letterbomb for the regular Wii`);
 
@@ -75,6 +75,8 @@ if(cmd === `${prefix}troubleshootmini`) return sendMsg(`**__Loader Troubleshooti
 
 if(cmd === `${prefix}structure`) return sendMsg(`**__Game and App directory structure visualised__**\n\n**Wii Games**\n:floppy_disk: SD Card or USB Drive\n| ╸:file_folder: wbfs\n      | ╸:file_folder: GameName [GameID]\n            | ╸:page_facing_up: GameID.wbfs\n\n**GameCube Games**\n:floppy_disk: SD Card or USB Drive\n| ╸:file_folder: games\n      | ╸:file_folder: GameName GameID\n            | ╸:page_facing_up: game.iso\n\n**Applications**\n:floppy_disk: SD Card or USB Drive\n| ╸:file_folder: apps\n      | ╸:file_folder: AppName\n            | ╸:page_facing_up: boot.dol\n            | ╸:page_facing_up: meta.xml\n            | ╸:page_facing_up: icon.png\n\nNote: meta.xml and icon.png are not required and may be added in for aesthetic reasons.`)
 
+if(cmd === `${prefix}invite`) return sendMsg(`https://discord.com/oauth2/authorize?client_id=788308728423120896&scope=bot&permissions=117760`);                                    
+                                    
 if(cmd === `${prefix}g`) {
     let query = message.content.replace(`${prefix}g`, '');
     query = encodeURIComponent(query.trim());
@@ -84,9 +86,8 @@ if(cmd === `${prefix}g`) {
 if (cmd === `${prefix}ping`) {
     var ping = Date.now() - message.createdTimestamp + " ms";
     return message.channel.send("Pong! The bot's ping is " + `${ping}`);
-}
-    
+}  
+                                    
 });
 
 bot.login(token);
-
