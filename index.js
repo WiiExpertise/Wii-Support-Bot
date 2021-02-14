@@ -3,7 +3,7 @@ const bot = new Discord.Client({disableEveryone: true});
 const token = ("YOUR-TOKEN-HERE");
 
 // Set activity and log to console
-bot.on("ready", async () => { console.log(`I am online`); bot.user.setPresence( { activity: { name: `/help` }, type: 'LISTENING' });
+bot.on("ready", async () => { console.log(`I am online`); bot.user.setPresence( { activity: { name: `/help`, type: `LISTENING` } } );
 });
 
 // Tell people to fuck off when DMing
