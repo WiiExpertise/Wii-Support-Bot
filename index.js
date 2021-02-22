@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
-const token = ("YOUR-TOKEN-HERE");
+const token = ("Nzg4MzA4NzI4NDIzMTIwODk2.X9hntg.l36PkVMVfoVmewxHaPlHwYX018M");
 
 // Set activity and log to console
 bot.on("ready", async () => { console.log(`I am online`); bot.user.setPresence( { activity: { name: `/help`, type: `LISTENING` } } );
