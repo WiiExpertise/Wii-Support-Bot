@@ -13,4 +13,4 @@
 Contact me on Discord to report issues with the bot. akisblack#2545
 
 ## License
-This project is licensed under the ISC License, please read [License.md](/LICENSE.md).
+This project is licensed under the Porkord License, please read [License.md](/LICENSE.md).
