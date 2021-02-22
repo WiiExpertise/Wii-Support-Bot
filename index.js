@@ -63,7 +63,7 @@ if(cmd === `${prefix}pins`) return sendMsg(`Please check the pinned messages for
 
 if(cmd === `${prefix}sega`) return sendMsg(`https://akisblack.github.io/wii%20stuff/nintendont`);
 
-if(cmd === `${prefix}credits`) return sendMsg(`Bot creator:\nakisblack#2545\n\nKudos:\nshrek#7532\nWiiMaster#7071\nMethodOrMadness#9199\nDevnol#9366\noscie#1093\nOdyssey346#9848`);
+if(cmd === `${prefix}credits`) return sendMsg(`Bot creator:\nakisblack#2545\n\nKudos:\nshrek#7532\nMethodOrMadness#9199\nDevnol#9366\noscie#1093\nOdyssey346#9848`);
 
 if(cmd === `${prefix}vwii`) return sendMsg(`https://wiiu.hacks.guide/#/vwii-modding`);
 
